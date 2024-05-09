@@ -1,6 +1,6 @@
-# Demo of Ada/Spark Language on Arduino using PlatformIO
+# Demo of Ada/Spark Language on Arduino with PlatformIO
 
 (Alire is used for toolchain only)
 
 1) `alr exec -- gprbuild -P demo`
-2) Platformio Build and Upload
+2) PlatformIO Build and Upload
