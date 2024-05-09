@@ -1,5 +1,10 @@
-# Object file
-*.o
+alire
+lib
+obj
+.pio
+.vscode
 
-# Ada Library Information
+*.a
 *.ali
+*.ci
+*.o
