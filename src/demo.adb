@@ -9,6 +9,6 @@ package body Demo is
 
    procedure Run is
    begin
-      UART.Put_Line ("Crazy people use ada on arduino!");
+      UART.Put_Line ("Lorem ipsum dolor sit amet...");
    end Run;
 end Demo;
