@@ -1,0 +1,43 @@
+abstract project Target_Options is
+   type Build_Type is ("Release", "Debug");
+   Build : Build_Type := external ("TARGET_BUILD", "Debug");
+
+   type Board_Type is ("atmega328p");
+   Board : Board_Type := external ("TARGET_BOARD", "atmega328p");
+
+   COMMON_FLAGS :=
+     ("-fcallgraph-info=su,da",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-mmcu=" & Board);
+
+   ADA_FLAGS :=
+     ("-gnatef",
+      "-fverbose-asm",
+      "-gnateDBOARD=" & Board);
+
+   case Build is
+      when "Release" =>
+         COMMON_FLAGS := COMMON_FLAGS &
+           ("-Os");
+         ADA_FLAGS := ADA_FLAGS &
+           ("-gnatp",
+            "-gnatVn",
+            "-gnatn2");
+
+      when "Debug" =>
+         COMMON_FLAGS := COMMON_FLAGS &
+           ("-Og",
+            "-gdwarf-2");
+   end case;
+
+   ALL_ADA_FLAGS := COMMON_FLAGS & ADA_FLAGS;
+
+   BINDER_FLAGS :=
+     ("-minimal");
+
+   LINKER_FLAGS :=
+     ("-Wl,--relax",
+      "-Wl,--gc-sections",
+      "-mmcu=" & Board);
+end Target_Options;

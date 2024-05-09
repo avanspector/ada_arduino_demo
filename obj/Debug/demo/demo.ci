@@ -1,0 +1,8 @@
+graph: { title: "C:\Users\drbuzz\_code\ada_arduino_demo\src\demo.adb"
+node: { title: "*demo_init" label: "Init\nC:\Users\drbuzz\_code\ada_arduino_demo\src\demo.adb:5:4\n2 bytes (static)\n0 dynamic objects" }
+node: { title: "uart__init" label: "INIT\nC:\Users\drbuzz\_code\ada_arduino_demo\src\uart.ads:2:14" shape : ellipse }
+edge: { sourcename: "*demo_init" targetname: "uart__init" label: "C:\Users\drbuzz\_code\ada_arduino_demo\src\demo.adb:7:11" }
+node: { title: "*demo_run" label: "Run\nC:\Users\drbuzz\_code\ada_arduino_demo\src\demo.adb:10:4\n2 bytes (static)\n0 dynamic objects" }
+node: { title: "uart__put_line" label: "PUT_LINE\nC:\Users\drbuzz\_code\ada_arduino_demo\src\uart.ads:6:14" shape : ellipse }
+edge: { sourcename: "*demo_run" targetname: "uart__put_line" label: "C:\Users\drbuzz\_code\ada_arduino_demo\src\demo.adb:12:11" }
+}

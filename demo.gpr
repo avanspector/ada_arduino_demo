@@ -1,0 +1,25 @@
+with "target_options.gpr";
+
+project Demo is
+   for Target use "avr-elf";
+   for Languages use ("Ada");
+   for Runtime ("Ada") use "rts";
+
+   for Library_Name use "demo";
+   for Library_Kind use "static";
+   for Library_Dir use "lib";
+   for Library_Auto_Init use "False";
+   
+   for Source_Dirs use ("src");
+   for Object_Dir use "obj/" & Target_Options.Build &
+     "/" & Project'Name;
+
+   package Compiler is
+      for Default_Switches ("Ada") use Target_Options.ALL_ADA_FLAGS;
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use Target_Options.BINDER_FLAGS &
+        ("-Es"); -- Symbolic traceback
+   end Binder;
+end Demo;

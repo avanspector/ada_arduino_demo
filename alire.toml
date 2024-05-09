@@ -1,0 +1,13 @@
+name = "ada_arduino_demo"
+description = ""
+version = "0.1.0-dev"
+
+authors = ["Your Name"]
+maintainers = ["Your Name <example@example.com>"]
+maintainers-logins = ["github-username"]
+licenses = "BSD-3-Clause"
+website = ""
+tags = []
+
+[[depends-on]]
+gnat_avr_elf = "*"

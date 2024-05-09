@@ -1,0 +1,30 @@
+with "target_options.gpr";
+
+project RTS is
+   for Target use "avr-elf";
+   for Languages use ("Ada");
+   for Runtime ("Ada") use "rts";
+
+   for Library_Name use "gnat";
+   for Library_Kind use "static";
+   for Library_Dir use "rts/adalib";
+   for Library_Auto_Init use "False";
+
+   for Source_Dirs use ("rts/adainclude");
+   for Object_Dir use "obj/" & Target_Options.Build &
+     "/" & Project'Library_Name;
+
+   package Compiler is
+      for Default_Switches ("Ada") use Target_Options.ALL_ADA_FLAGS &
+        ("-gnatg");
+
+      for Switches ("system.ads") use Compiler'Default_Switches ("Ada") &
+        ("-gnateT=" & Project'Project_Dir &
+         "/rts/" & Target_Options.Board & ".txt") &
+        ("-gnatet=" & Target_Options.Board & ".txt");
+   end Compiler;
+
+   package Binder is
+      for Switches ("Ada") use Target_Options.BINDER_FLAGS;
+   end Binder;
+end RTS;

@@ -1,0 +1,5 @@
+graph: { title: "C:\Users\drbuzz\_code\ada_arduino_demo\rts\adainclude\s-unstyp.ads"
+node: { title: "system__unsigned_types__packed_bytes1IP" label: "packed_bytes1IP\n<built-in>\n2 bytes (static)\n0 dynamic objects" }
+node: { title: "system__unsigned_types__packed_bytes2IP" label: "packed_bytes2IP\n<built-in>\n2 bytes (static)\n0 dynamic objects" }
+node: { title: "system__unsigned_types__packed_bytes4IP" label: "packed_bytes4IP\n<built-in>\n2 bytes (static)\n0 dynamic objects" }
+}
